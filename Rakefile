@@ -3,9 +3,9 @@ require 'bundler/gem_tasks'
 
 task :console do
   require 'pry'
-  require 'sequel-etl'
+  require 'lib/sequel-etl'
   ARGV.clear
-  pry.start
+  Pry.start
 end
 
 begin
