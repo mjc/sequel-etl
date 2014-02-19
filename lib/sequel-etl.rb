@@ -118,15 +118,15 @@ module Sequel
       end
     end
 
-    def run(sql)
+    def run(source,sql)
       time_and_log(sql: sql) do
-        connection.run sql
+        connections[source].run sql
       end
     end
 
-    def fetch(sql)
+    def fetch(source,sql)
       time_and_log(sql: sql) do
-        connection.fetch sql
+        connections[source].fetch sql
       end
     end
 
